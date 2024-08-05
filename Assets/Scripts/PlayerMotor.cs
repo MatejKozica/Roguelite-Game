@@ -8,6 +8,7 @@ public class PlayerMotor : PlayerController
     public int playerJumpHeight;
     public Animator anim;
     public SpriteRenderer sprite;
+    public LayerMask exitDoorMask;
 
     private bool facingRight = true;
 
@@ -44,6 +45,14 @@ public class PlayerMotor : PlayerController
             }
         } else {
             crouched = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.S)) {
+            Collider2D doorCheck = Physics2D.OverlapCircle(transform.position, 0.1f, exitDoorMask);
+            if(doorCheck != null) {
+                Generation.NextLevel();
+                doorCheck.GetComponent<ExitDoor>().NextLevel();
+            }
         }
 
         if(grounded)

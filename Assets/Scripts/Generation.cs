@@ -25,6 +25,7 @@ public class Generation : MonoBehaviour
 
     void Start(){
         firstStageDone = false;
+        readyForPlayer = false;
         roomArray = new GameObject[length, height];
         Random.InitState(seed);
         transform.position = new Vector2(Random.Range(0, length), 0);
@@ -105,6 +106,7 @@ public class Generation : MonoBehaviour
                     CreateRoom(endingRooms[0]);
                     FillMap();
                     firstStageDone = true;
+                    readyForPlayer = true;
                 }
             }
 
@@ -136,5 +138,9 @@ public class Generation : MonoBehaviour
 
     GameObject GetRoom(Vector2 position){
         return roomArray[(int)position.x, -(int)position.y];
+    }
+
+    public static void NextLevel() {
+        PlayerData.levelNumber++;
     }
 }

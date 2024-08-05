@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c194e7d2cd9314009b7fb48e0381883e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3521642294621482512, guid: fff4d11f9aa74584d89e98998e577b98, type: 3}
   hasPlayerSpawned: 0
-  spawnPosition: {fileID: 0}
+  spawnPosition: {fileID: 5852064301215863563}
 --- !u!1 &8125607391991666821
 GameObject:
   m_ObjectHideFlags: 0
