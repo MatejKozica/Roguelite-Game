@@ -12,6 +12,7 @@ public class Generation : MonoBehaviour
     public GameObject[] fillerRooms;
     public GameObject[] endingRooms;
 
+    public static Dictionary<Vector2, GameObject> tileDict;
     public GameObject[,] roomArray;
     public List<Vector2> loadedRooms;
     public int delayTime;
@@ -27,7 +28,8 @@ public class Generation : MonoBehaviour
         firstStageDone = false;
         readyForPlayer = false;
         roomArray = new GameObject[length, height];
-        Random.InitState(seed);
+        tileDict = new Dictionary<Vector2, GameObject>();
+        // Random.InitState(seed);
         transform.position = new Vector2(Random.Range(0, length), 0);
         CreateRoom(startingRooms[0]);
 
