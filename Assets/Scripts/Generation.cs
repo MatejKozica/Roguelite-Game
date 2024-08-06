@@ -30,7 +30,7 @@ public class Generation : MonoBehaviour
         roomArray = new GameObject[length, height];
         tileDict = new Dictionary<Vector2, GameObject>();
         // Random.InitState(seed);
-        transform.position = new Vector2(Random.Range(0, length - 1), 0);
+        transform.position = new Vector2(Random.Range(0, length), 0);
         CreateRoom(startingRooms[0]);
 
         if(transform.position.x == 0)
