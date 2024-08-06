@@ -12,6 +12,7 @@ public class Generation : MonoBehaviour
     public GameObject[] fillerRooms;
     public GameObject[] endingRooms;
 
+    public static Dictionary<Vector2, GameObject> tileDict;
     public GameObject[,] roomArray;
     public List<Vector2> loadedRooms;
     public int delayTime;
@@ -27,8 +28,9 @@ public class Generation : MonoBehaviour
         firstStageDone = false;
         readyForPlayer = false;
         roomArray = new GameObject[length, height];
-        Random.InitState(seed);
-        transform.position = new Vector2(Random.Range(0, length), 0);
+        tileDict = new Dictionary<Vector2, GameObject>();
+        // Random.InitState(seed);
+        transform.position = new Vector2(Random.Range(0, length - 1), 0);
         CreateRoom(startingRooms[0]);
 
         if(transform.position.x == 0)
@@ -36,7 +38,7 @@ public class Generation : MonoBehaviour
         else if(transform.position.x == length - 1)
             direction = 2;
         else
-            direction = Random.Range(0, 4);
+            direction = Random.Range(0, 3);
     }
 
     void Update(){
@@ -44,7 +46,7 @@ public class Generation : MonoBehaviour
             delay = 0;
             // right
             if(direction == 0 || direction == 1){
-                if(transform.position.x <= length - 1){
+                if(transform.position.x < length - 1){
                     transform.position += Vector3.right;
                     int r = 0;
                     CreateRoom(pathRooms[r]);
