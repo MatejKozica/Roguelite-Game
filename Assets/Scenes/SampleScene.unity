@@ -327,6 +327,8 @@ MonoBehaviour:
   - {fileID: 3688013904779047613, guid: ba920f0e80deb4c51ae8f8aab3cd60fc, type: 3}
   endingRooms:
   - {fileID: 2743293798750908984, guid: ed2459f7b2b81444b890fa4afa414156, type: 3}
+  treasure:
+  - {fileID: 8411532473062654389, guid: 34e720c4947231a489e64c7631b7e7c7, type: 3}
   loadedRooms: []
   delayTime: 0
   seed: 0

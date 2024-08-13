@@ -10,7 +10,9 @@ public class TileSpawn : MonoBehaviour
         int r = Random.Range(0, tileSpawns.Length);
         if(tileSpawns[r] != null) {
             GameObject gObject = Instantiate(tileSpawns[r], transform);
-            Generation.tileDict.Add(gObject.transform.position, gObject);
+            if(!Generation.tileDict.ContainsKey(gObject.transform.position)) {
+                Generation.tileDict.Add(gObject.transform.position, gObject);
+            }
         }
     }
 }
