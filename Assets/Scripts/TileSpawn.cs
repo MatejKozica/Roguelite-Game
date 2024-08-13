@@ -12,7 +12,6 @@ public class TileSpawn : MonoBehaviour
             GameObject gObject = Instantiate(tileSpawns[r], transform);
             if(!Generation.tileDict.ContainsKey(gObject.transform.position)) {
                 Generation.tileDict.Add(gObject.transform.position, gObject);
-            }
         }
     }
 }
