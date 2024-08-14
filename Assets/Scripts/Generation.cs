@@ -13,6 +13,7 @@ public class Generation : MonoBehaviour
     public GameObject[] endingRooms;
     public GameObject[] treasure;
     public GameObject[] enemies;
+    public GameObject[] traps;
 
     public static Dictionary<Vector2, GameObject> tileDict;
     public GameObject[,] roomArray;
@@ -159,13 +160,21 @@ public class Generation : MonoBehaviour
 
                             if (count > 3 && Random.Range(0, 4) == 0)
                             {
+                                // Treasure
                                 int index = Random.Range(0, treasure.Length);
                                 Instantiate(treasure[index], pos, Quaternion.identity);
                             }
                             else if (count <= 3 && Random.Range(0, 4) == 0)
                             {
+                                // Enemies
                                 int index = Random.Range(0, enemies.Length);
                                 Instantiate(enemies[index], pos, Quaternion.identity);
+                            }
+                            else if (Random.Range(0, 4) == 0)
+                            {
+                                // Traps
+                                int index = Random.Range(0, traps.Length);
+                                Instantiate(traps[index], pos, Quaternion.identity);
                             }
                         }
                     }

@@ -253,6 +253,8 @@ MonoBehaviour:
   - {fileID: 8411532473062654389, guid: 34e720c4947231a489e64c7631b7e7c7, type: 3}
   enemies:
   - {fileID: 7017981866913550802, guid: 01b3d8bb9fee6b546810e0c31d00ebca, type: 3}
+  traps:
+  - {fileID: 2008999325066164507, guid: 129c360a8960be8458edb1c26213cc7e, type: 3}
   loadedRooms: []
   delayTime: 0
   seed: 0

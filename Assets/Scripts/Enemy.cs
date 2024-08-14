@@ -34,7 +34,7 @@ public class Enemy : PlayerController
         }
 
         RaycastHit2D ray = Physics2D.Raycast(edgeDetector.position, Vector2.down, 1f);
-        if (ray.collider == false || ray.collider.gameObject.layer == LayerMask.NameToLayer("NoCollision"))
+        if (ray.collider == false) //|| ray.collider.gameObject.layer == LayerMask.NameToLayer("NoCollision")
             movingRight = !movingRight;
 
         if (move.x == 0)

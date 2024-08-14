@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c6c024554228071428919e21bc034c3d
+guid: 9d28b3466962a2d46b545022bc024853
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: world_tileset_0
+      name: Trap_Spike_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 16
-        height: 16
+        y: 1
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4969cb8f484e9c24cba59bd6c61eb588
-      internalID: 378794464
+      spriteID: 6a4f1759f2a55624fa8c7e7dc2bfef32
+      internalID: -1093103146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: world_tileset_1
+      name: Trap_Spike_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 224
-        width: 16
-        height: 16
+        x: 33
+        y: 1
+        width: 13
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c6fdaaea9a236a4f81a807cf0013a70
-      internalID: -1863152884
+      spriteID: becc854f6c96b7840939c355c74aa1b8
+      internalID: -787166659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: world_tileset_2
+      name: Trap_Spike_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 240
-        width: 16
-        height: 16
+        x: 49
+        y: 18
+        width: 30
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,29 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b18a67c074dfba946b4c6a01365c25c2
-      internalID: -996181547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: world_tileset_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 224
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1193ac9c86c59e48a1f43858d3fc206
-      internalID: -341543331
+      spriteID: 44184be06a4e07947bac6124640d5eac
+      internalID: 801381823
       vertices: []
       indices: 
       edges: []
@@ -191,10 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      world_tileset_0: 378794464
-      world_tileset_1: -1863152884
-      world_tileset_2: -996181547
-      world_tileset_3: -341543331
+      Trap_Spike_0: -1093103146
+      Trap_Spike_1: -787166659
+      Trap_Spike_2: 801381823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
