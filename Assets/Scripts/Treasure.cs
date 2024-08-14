@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Treasure : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int value;
+    public void OnCollide(bool isPlayer)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (isPlayer)
+        {
+            PlayerData.gold += value;
+            Destroy(gameObject);
+        }
     }
 }

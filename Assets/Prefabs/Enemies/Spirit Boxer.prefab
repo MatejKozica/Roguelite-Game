@@ -91,6 +91,8 @@ GameObject:
   - component: {fileID: 9063344047257761268}
   - component: {fileID: 5923631165326618843}
   - component: {fileID: 936284537231812568}
+  - component: {fileID: 2290417225942973505}
+  - component: {fileID: 7149661653565437451}
   m_Layer: 8
   m_Name: Spirit Boxer
   m_TagString: Untagged
@@ -277,3 +279,32 @@ MonoBehaviour:
   anim: {fileID: 0}
   edgeDetector: {fileID: 7240677119183343427}
   sprite: {fileID: 0}
+--- !u!114 &2290417225942973505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017981866913550802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774c432d148154944923a6c09d533b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7149661653565437451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017981866913550802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cca96a5968deb4589afcdd2c20f124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
