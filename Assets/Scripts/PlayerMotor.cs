@@ -136,6 +136,4 @@ public class PlayerMotor : PlayerController
         TakeDamage(amount);
         velocity += new Vector2(targetPos.x >= transform.position.x ? -10 : 10, targetPos.y >= transform.position.y ? -10 : 10);
     }
-
-
 }

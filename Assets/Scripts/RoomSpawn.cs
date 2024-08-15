@@ -6,10 +6,12 @@ public class RoomSpawn : MonoBehaviour
 {
     public GameObject[] rooms;
     bool flag = false;
-    
+
     void Update()
     {
-        if(Generation.firstStageDone && !flag){
+        if (Generation.firstStageDone && !flag)
+        {
+
             flag = true;
             // Generate Room
             int r = Random.Range(0, rooms.Length);
