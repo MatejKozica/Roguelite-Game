@@ -6,11 +6,14 @@ public class PlayerMotor : PlayerController
 {
     public int playerSpeed;
     public int playerJumpHeight;
+    public int playerClimbingSpeed = 8;
     public Animator anim;
     public SpriteRenderer sprite;
     public LayerMask exitDoorMask;
+    public LayerMask ladderMask;
 
-    private bool facingRight = true;
+    private bool isClimbing;
+    private bool isLadderCollision;
 
     void Start()
     {
@@ -25,18 +28,13 @@ public class PlayerMotor : PlayerController
 
     void UpdatePlayer()
     {
-        float pSpeed = Input.GetAxis("Horizontal");
-
         Vector2 move = Vector2.zero;
+        Collider2D ladderCheck = Physics2D.OverlapCircle(transform.position, 0.1f, ladderMask);
 
-        if (!crouched && !Input.GetKey(KeyCode.LeftControl))
-        {
-            move.x = Input.GetAxis("Horizontal");
-        }
-        else if (!crouched && Input.GetKey(KeyCode.LeftControl))
-        {
-            move.x = Input.GetAxis("Horizontal") * 2;
-        }
+        move.x = Input.GetAxis("Horizontal");
+
+        if (!ladderCheck)
+            Physics2D.gravity = new Vector2(0, -9.8f);
 
         if (Input.GetButton("Jump") && grounded)
         {
@@ -50,6 +48,14 @@ public class PlayerMotor : PlayerController
                 velocity.y = playerJumpHeight;
             }
         }
+        else if (Input.GetButton("Jump") && ladderCheck != null)
+        {
+            anim.SetTrigger("onJump");
+            if (Mathf.Abs(velocity.x) > 0)
+            {
+                velocity.y = playerJumpHeight / 2 + Mathf.Abs(velocity.x * 0.2f);
+            }
+        }
         else if (Input.GetButtonDown("Jump"))
         {
             if (velocity.y > 0)
@@ -57,9 +63,18 @@ public class PlayerMotor : PlayerController
                 velocity.y *= 0.5f;
             }
         }
-        else
+
+        if (ladderCheck != null && Mathf.Abs(Input.GetAxis("Vertical")) > 0f)
         {
-            crouched = false;
+            Physics2D.gravity = Vector2.zero;
+            velocity.y = playerClimbingSpeed * Input.GetAxis("Vertical");
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Is ladder: " + Physics2D.OverlapCircle(transform.position, 0.1f, ladderMask));
+            Debug.Log("Is climbing: " + isLadderCollision);
+            Debug.Log("Vertical speed: " + Input.GetAxis("Vertical"));
         }
 
         if (Input.GetKeyDown(KeyCode.S))
@@ -72,6 +87,7 @@ public class PlayerMotor : PlayerController
             }
         }
 
+        // Animation control
         if (grounded)
             anim.SetBool("isGrounded", true);
         else
@@ -86,11 +102,7 @@ public class PlayerMotor : PlayerController
             anim.SetBool("isWalking", true);
         }
 
-        if (move.x < 0)
-            facingRight = false;
-        else
-            facingRight = true;
-
+        // Sprite orientation
         if (move.x < 0)
         {
             sprite.flipX = true;
@@ -117,9 +129,7 @@ public class PlayerMotor : PlayerController
         {
             TakeDamage(collider.GetComponent<EnemyBase>().damage); //collider.transform.position
         }
-
     }
-
     public void OnDeath()
     {
         Debug.Log("The player has died");

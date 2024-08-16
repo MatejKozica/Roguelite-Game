@@ -169,14 +169,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGroundNormalY: 0.65
-  gravityModififer: 5
-  playerSpeed: 12
-  playerJumpHeight: 18
+  gravityModifier: 5
+  playerSpeed: 10
+  playerJumpHeight: 16
   anim: {fileID: 0}
   sprite: {fileID: 0}
   exitDoorMask:
     serializedVersion: 2
     m_Bits: 128
+  ladderMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!212 &4819175852906559507
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float minGroundNormalY = 0.65f;
-    public float gravityModififer = 1f;
+    public float gravityModifier = 1f;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
-    protected bool crouched;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
     protected Vector2 velocity;
@@ -50,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        velocity += gravityModififer * Physics2D.gravity * Time.deltaTime;
+        velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
         velocity.x = targetVelocity.x;
 
         grounded = false;
